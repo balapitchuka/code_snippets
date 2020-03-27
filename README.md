@@ -1,2 +1,2 @@
-# code_snippets
+# Code Snippets
 Snippets from various programming languages
