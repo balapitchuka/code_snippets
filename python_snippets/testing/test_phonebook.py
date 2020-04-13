@@ -15,6 +15,10 @@ class PhonebookTest(unittest.TestCase):
         number = self.phonebook.lookup('bob')
         self.assertEqual(number, '12345')
 
+    def test_lookup_missing_name(self):
+        with self.assertRaises(KeyError):
+            self.phonebook.lookup('missing')
+
     def test_empty_phonebook_is_consistent(self):
         self.assertTrue(self.phonebook.is_consistent())
 
@@ -32,3 +36,8 @@ class PhonebookTest(unittest.TestCase):
         self.phonebook.add('bob', '12345')
         self.phonebook.add('blue', '1234')
         self.assertFalse(self.phonebook.is_consistent())
+
+    @unittest.SkipTest
+    def test_skip_test_example(self):
+        """This testcase is skipped because of decorator"""
+        pass
